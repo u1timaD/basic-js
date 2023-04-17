@@ -18,12 +18,13 @@ function createDreamTeam(members) {
     return false;
   }
 
-  const firstLetters = members
-    .filter(member => typeof member === 'string')
-    .map(member => member.trim()[0].toUpperCase());
-  
-  return firstLetters.sort(git).join('');
+  const filteredMembers = members.filter(member => typeof member === 'string');
+
+  const firstLetters = filteredMembers.map(member => member.trim()[0].toUpperCase());
+
+  return firstLetters.sort().join('');
 }
+
 
 module.exports = {
   createDreamTeam
